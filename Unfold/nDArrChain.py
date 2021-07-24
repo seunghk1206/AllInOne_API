@@ -30,8 +30,8 @@ def arrDivArr(arr1D, indArr):
         return UFB.passArrDiv(arr1D, indArr)
     else:
         try:
-            Ex = IndexError
-            Ex.sterror = "The index array does not match the dimensions of input array"
+            Ex = IndexError()
+            Ex.sterror = "The index array does not match the length of input array! The length of your array is " + str(len(arr1D)) + " where as it is " + str(len(nDUnf(indArr))) + " for the ind array"
             raise Ex
         except IndexError as E:
             print("Not full index array error!", E.sterror)
@@ -39,5 +39,4 @@ def arrDivArr(arr1D, indArr):
 def nDarr2IndArr(nDarr):
     return UFB.nDarr2IndArrBod(nDarr, [i for i in range(len(nDUnf(nDarr)))])
 
-print(arrDivArr([101, 400, 600, 300, 222, 100], [[[[[[[[0]]]]]], 1, 3, [2, 4], 5]]))
-print(nDarr2IndArr([[[[[[[[0]]]]]], 1, 3, [2, 4], 5]]))
+print(arrDivArr([101, 400, 600, 300, 222, 100], [[[[[[[[0]]]]]], 3, [2, 4], 5]]))
