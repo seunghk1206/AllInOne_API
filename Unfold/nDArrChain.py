@@ -1,5 +1,6 @@
 import sys
 sys.setrecursionlimit(200000)
+import UnfoldBodies as UFB
 def nDUnf(arr):
     varL = []
     for each in arr:
@@ -24,3 +25,19 @@ def div1D(arr1D, term):
     retL = [[arr1D[i*term+j] for j in range(term)] for i in range(len(arr1D)//term)]
     return retL
 
+def arrDivArr(arr1D, indArr):
+    if sorted(nDUnf(indArr)) == [each for each in range(len(arr1D))]:
+        return UFB.passArrDiv(arr1D, indArr)
+    else:
+        try:
+            Ex = IndexError
+            Ex.sterror = "The index array does not match the dimensions of input array"
+            raise Ex
+        except IndexError as E:
+            print("Not full index array error!", E.sterror)
+
+def nDarr2IndArr(nDarr):
+    return UFB.nDarr2IndArrBod(nDarr, [i for i in range(len(nDUnf(nDarr)))])
+
+print(arrDivArr([101, 400, 600, 300, 222, 100], [[[[[[[[0]]]]]], 1, 3, [2, 4], 5]]))
+print(nDarr2IndArr([[[[[[[[0]]]]]], 1, 3, [2, 4], 5]]))
