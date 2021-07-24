@@ -1,4 +1,5 @@
-from VDC import VersatileDeciConverter as VDC
+import sys
+sys.setrecursionlimit(200000)
 def nDUnf(arr):
     varL = []
     for each in arr:
@@ -18,11 +19,8 @@ def nDUnfSet(arr):
         else:
             retL.append(each)
     return retL
-def nDArr2nNom(arr, nNom):
-    retL = []
-    unfL = nDUnf(arr)
-    for each in unfL:
-        retL.append(VDC.versatileDeci(0, each, nNom))
+
+def div1D(arr1D, term):
+    retL = [[arr1D[i*term+j] for j in range(term)] for i in range(len(arr1D)//term)]
     return retL
 
-print(nDUnf([20, [1,2,3,1,2], [1,2,0,0,0], [1,1,2], [[3], [1,5,2]]]))
