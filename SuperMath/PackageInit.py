@@ -1,14 +1,13 @@
 # =================MaclauringSeries===============
 import MaclaurinSeries as M
+import MaclaurinSeriesBody as MB
 
-def summateExponent(x, precision):
-    return M.summateExponent(x, precision)
 
 def exponentMaclaurin(x, precision):
     return M.exponentMaclaurin(x, precision)
 
 def summateFractional(x, precision):
-    return M.summateFractional(x, precision)
+    return MB.summateFractional(x, precision)
 
 def fractional(x, precision): # return 1/(1-x) in maclaurin series for |x| < 1
     return summateFractional(x, precision) # when x = 1, undefined
