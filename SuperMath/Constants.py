@@ -25,3 +25,5 @@ def pi(precision):
 
 def pi2(precision):
     return 99**2/(2*(2)**(1/2))*1/summatePiF(precision) #precision -> inf, more precise the pi is.
+
+print(pi2(2))
